@@ -1,4 +1,5 @@
 const usrEscolhe = document.querySelector('.box-escolha');
+const usrBoxes = document.querySelector('.boxes');
 const compEscolhe = document.querySelector('.computador-escolhe');
 const jogo = document.querySelectorAll(".box");
 const usrFrase = document.querySelector(".usr");
@@ -106,11 +107,12 @@ function result(){
 jogo.forEach((e) => {
     e.addEventListener('click', ()=>{
         const idItem = e.getAttribute('id');
+        usrBoxes.style.display = 'none';
         choice(idItem);
         compChoice(comp);
         result();
         setTimeout(function() {
             location.reload();
-        }, 5000);
+        }, 3000);
     });
 });
